@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
     test_y = test[[response]]
 
-    max_runtime_secs = float(sys.argv[1]) if len(sys.argv) > 1 else 10
+    max_runtime_secs = int(sys.argv[1]) if len(sys.argv) > 1 else 10
 
     # Start an MLflow run; the "with" keyword ensures we'll close the run even if this cell crashes
     with mlflow.start_run():
@@ -88,5 +88,5 @@ if __name__ == "__main__":
         mlflow.log_metric("r2", r2)
         mlflow.log_metric("mae", mae)
         # Log artifacts (output files)
-        mlflow.h2o.save_model(best_model, "/home/mapr/etc/auto_model")
+        mlflow.h2o.save_model(best_model, "/home/mapr/auto_model")
         mlflow.h2o.log_model(best_model, "automl_model")
