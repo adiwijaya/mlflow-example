@@ -5,5 +5,5 @@ conda_env: conda.yaml
 entry_points:
   main:
     parameters:
-      max_runtime_secs: type: float, default: 10}
-    command: "python train_diabetes.py {max_runtime_secs}"
+      max_runtime_secs: float
+    command: "python train.py {alpha} {l1_ratio}"
