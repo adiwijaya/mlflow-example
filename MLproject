@@ -6,4 +6,4 @@ entry_points:
   main:
     parameters:
       max_runtime_secs: float
-    command: "python train.py {alpha} {l1_ratio}"
+    command: "python train_diabetes.py {max_runtime_secs}"
