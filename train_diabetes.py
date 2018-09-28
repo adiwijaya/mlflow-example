@@ -9,11 +9,15 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
 
+import h2o
+from h2o.automl import H2OAutoML
+h2o.init()
+
+
 # Import mlflow
 import mlflow
 import mlflow.sklearn
 import mlflow.h2o as h2o
-from h2o.automl import H2OAutoML
 
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
