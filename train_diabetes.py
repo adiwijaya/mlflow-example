@@ -17,7 +17,7 @@ h2o.init()
 # Import mlflow
 import mlflow
 import mlflow.sklearn
-import mlflow.h2o as h2o
+import mlflow.h2o
 
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
